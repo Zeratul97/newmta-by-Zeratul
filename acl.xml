@@ -1,0 +1,12 @@
+<group name="Admin">
+  <acl name="Moderator" />
+  <acl name="SuperModerator" />
+  <acl name="Admin" />
+  <acl name="RPC" />
+  <object name="resource.admin" />
+  <object name="resource.webadmin" />
+  <object name="resource.acpanel" />
+  <!--NewMTA mod -->
+  <object name="resource.devsystem" />
+  <object name="resource.admins" />
+</group>
