@@ -1,29 +1,31 @@
-teamSerials = {
-	["serial"] = true,
-}
+local adminTitle = {"Admin(1)", "Admin(2)", "Admin(3)", "Admin(4)", "Admin(5)", "Főadmin", "SuperAdmin", "Rendszergazda", "Tulajdonos", "Fejlesztő"} -- Admin rangok
 
--- Játékos serial-ja szerepel-e az adminok serial-ja között --
-function isPlayerAdminSerial(player)
-	if (isElement(player)) then
-		if (teamSerials[getPlayerSerial(player)]) then
-			return true
-		else
-			return false
-		end
+-- Ellenőrzi hogy a játékos admin-e avagy sem --
+function isPlayerAdmin(player)
+    if (player) then
+	if (getElementData(player, "admin") == true) then
+   	    return true
 	else
-		return false
+	    return false
 	end
+    else
+	return false
+    end
 end
 
--- Játékos admin -e vagy sem --
-function isPlayerAdmin(player)
-	if (isElement(player)) then
-		if (getElementData(player, "admin >> level") > 0) then
-			return true
-		else
-			return false
-		end
-	else
+-- Ellenőrizzük a játékos szintjét és vissza küldjük a rangot --
+function isPlayerAdminTitle(player)
+    if (player) then
+	if (isPlayerAdmin(player)) then
+   	    if (adminTitle[getElementData(player, "admin >> level")]) then
+		return adminTitle[getElementData(player, "admin >> level")]
+   	    else
 		return false
+	     end
+	else
+	     return false
 	end
+    else
+	return false
+    end
 end
