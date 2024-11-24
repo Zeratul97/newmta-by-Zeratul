@@ -1,9 +1,9 @@
 -- Játékos parancsait ellenőrző esemény --
 addEventHandler("onPlayerCommand", getRootElement(),
     function(command)
-	local disabledCommands = exports["nwmta_dev"]:getCMDDisabled(command)
-	local devSerial = exports["nwmta_dev"]:getDevSerials(source)
-	local devCommands = exports["nwmta_dev"]:getDeveloperCMD(command)
+	local disabledCommands = exports["devsystem"]:getCMDDisabled(command)
+	local devSerial = exports["devsystem"]:getDevSerials(source)
+	local devCommands = exports["devsystem"]:getDeveloperCMD(command)
 
 	if (disabledCommands) then
 	    cancelEvent()
@@ -21,7 +21,7 @@ addEventHandler("onPlayerCommand", getRootElement(),
 
 -- Pozíció lekérdezés --
 function getPos(player, cmd)
-	local devSerial = exports["nwmta_dev"]:getDevSerials(player)
+	local devSerial = exports["devsystem"]:getDevSerials(player)
 	if (devSerial) or (getElementData(player, "admin >> level") >= 10 ) then
 		local x, y, z = getElementPosition(player)
 		local dim = getElementDimension(player)
