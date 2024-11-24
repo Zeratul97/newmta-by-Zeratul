@@ -1,17 +1,21 @@
--- Collision-ök megjelenítése --
-function setCollisionsEnabled(cmd)
-	if (isPlayerSerial(localPlayer)) then
+-- Fejlesztői mód ki/be kaplcsolása --
+function devMode(cmd)
+	local devSerial = exports["nwmta_dev"]:getDevSerials(localPlayer)
+	if (devSerial) or (getElementData(player, "admin >> level") >= 10 ) then
 		if (getDevelopmentMode() == true) then
 			setDevelopmentMode(false)
-			showCol(false)
-			outputChatBox("Fejlesztői mód kikapcsolva!", 255, 255, 255, true)
-			exports["admins"]:adminDiaryMessages(getPlayerName(localPlayer).." fejlesztői módot deaktiválta!")
 		else
 			setDevelopmentMode(true)
-			showCol(true)
-			outputChatBox("Fejlesztői mód bekapcsolva!", 255, 255, 255, true)
-			exports["admins"]:adminDiaryMessages(getPlayerName(localPlayer).." fejlesztői módot aktiválta!")
 		end
 	end
 end
-addCommandHandler("showcollisions", setCollisionsEnabled)
+addCommandHandler("enableddevmode", devMode)
+
+-- Collision-ök megjelenítése/eltűntetése --
+function showCollisions(cmd)
+	local devSerial = exports["nwmta_dev"]:getDevSerials(localPlayer)
+	if (devSerial) or (getElementData(player, "admin >> level") >= 10 ) then
+		showCol (not isShowCollisionsEnabled())
+	end
+end
+addCommandHandler("enabledcollisions", showCollisions)
