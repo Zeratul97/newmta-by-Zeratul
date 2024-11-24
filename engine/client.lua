@@ -31,7 +31,7 @@ addEventHandler("onClientPlayerDamage", root,
 
                     text = "Elkövető: "..attackerName..", Sértett: "..name..", Fegyver: "..weaponNewName
                 end
-                exports["nwmta_admins"]:logMessageClient(text)
+                exports["admins"]:logMessageClient(text)
             end
         else
             cancelEvent()
