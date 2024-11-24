@@ -1,6 +1,0 @@
-<meta>
-	<info author="Zeratul" type="script" name="[hud]" />
-
-	<script src="scoreboard/server.lua" type="server" />
-	<script src="names/client.lua" type="client" cache="false" />
-</meta>
