@@ -1,20 +1,27 @@
--- Script elindítás --
-addEventHandler("onResourceStart", getRootElement(),
-	function(res)
-		local modName = exports["engine"]:modDatas("name")
-		local modVersion = exports["engine"]:modDatas("version")
-		local modCity = exports["engine"]:modDatas("city")
+-- Szerver adatok --
+local modName
+local modVersion
+local modCity
 
-		setGameType(modName.." "..modVersion)
-		setMapName(modCity)
+-- Script elindulásakor --
+addEventHandler("onResourceStart", getRootElement(),
+	function(resource)
+		local modName = exports["nwmta_engine"]:modDataService("name")
+		local modVersion = exports["nwmta_engine"]:modDataService("version")
+		local modCity = exports["nwmta_engine"]:modDataService("city")
+
+		setGameType(modName.." "..modVersion)	-- Mod nevének beállítása
+		setMapName(modCity)	-- Pálya neve
 	end
 )
 
+-- Játékos Csatlakozás a szerverre --
 addEventHandler("onPlayerJoin", getRootElement(),
 	function()
-		fadeCamera(source, true)
-		setCameraTarget(source, source)
-		spawnPlayer(source, 0, 0, 3, 0, 0, 0, 0)
-		setPlayerNametagShowing(source, false)
+		spawnPlayer(source, 0, 0, 4, 0, 1) -- Játékos spawnolása a pályán
+		fadeCamera(source, true) -- Képernyő ne legyen fekete, amennyiben false akkor be kell állítanunk a képernyő színét
+		setCameraTarget(source, source)	-- Játékos kamera a játékos karakterét figyelje
+
+
 	end
 )
