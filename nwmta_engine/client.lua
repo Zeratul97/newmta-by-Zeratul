@@ -4,8 +4,6 @@ function toggleCursor()
 end
 bindKey("m", "up", toggleCursor)
 
-
-
 addEventHandler("onClientPlayerDamage", root,
     function(attacker, weapon, bodypart, loss)
        if (getElementData(source, "account >> login") == true) then
