@@ -1,1 +1,1 @@
-
+-- Hamarosan ide is kerülnek részek --
