@@ -1,0 +1,23 @@
+<meta>
+
+	<info author="Sasha" type="script" name="nwmta_infobox" />
+
+	<script src="infoboxClient.lua" type="client" />
+	<script src="infoboxServer.lua" type="server" />
+
+	<file src="files/images/error.png" />
+	<file src="files/images/info.png" />
+	<file src="files/images/success.png" />
+	<file src="files/images/warning.png" />
+
+	<file src="files/sounds/error.mp3" />
+	<file src="files/sounds/info.mp3" />
+	<file src="files/sounds/success.mp3" />
+	<file src="files/sounds/warning.mp3" />
+	<file src="files/fonts/roboto.ttf" />
+	
+
+	<export function="createInfoBox" type="client" />
+
+
+</meta>
