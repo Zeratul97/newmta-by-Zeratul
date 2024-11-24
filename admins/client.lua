@@ -1,31 +1,31 @@
--- Admin napló --
-function adminDiaryMessages(msg)
-	if (getElementData(localPlayer, "admin >> level") > 0) then
-		local modName = exports["engine"]:modDatas("name")
-		outputChatBox("["..modName.." - Admin napló]: "..msg, 255, 255, 255, true)
-	end
+-- Log üzenetek --
+function logMessageClient(message)
+    local devSerial = exports["nwmta_dev"]:getDevSerials(localPlayer)
+    if ((getElementData(localPlayer, "admin") == true) or devSerial) then
+	outputChatBox("[LOG]: "..message, 255, 255, 255, true)
+    end
 end
 
--- Admin napló meghívás szerver oldalról --
-addEvent("adminDiaryServer", true)
-addEventHandler("adminDiaryServer", getRootElement(),
-	function(msg)
-		adminDiaryMessages(msg)
-	end
+-- Szerver oldalon hívja meg a log üzeneteket --
+addEvent("logMessageServer", true)
+addEventHandler("logMessageServer", resourceRoot,
+    function(message)
+	logMessageClient(message)
+     end
 )
 
--- Log rendszer --
-function logMessages(msg)
-	if (getElementData(localPlayer, "admin >> level") > 0) then
-		local modName = exports["engine"]:modDatas("name")
-		outputChatBox("["..modName.." - Log]: "..msg, 255, 255, 255, true)
-	end
+-- Admin napló üzenetek --
+function adminDiaryClient(message)
+    local devSerial = exports["nwmta_dev"]:getDevSerials(localPlayer)
+    if ((getElementData(localPlayer, "admin") == true) or devSerial) then
+	outputChatBox("[Admin napló]: "..message, 255, 255, 255, true)
+    end
 end
 
--- Log meghívás szerver oldalról --
-addEvent("adminLogServer", true)
-addEventHandler("adminLogServer", getRootElement(),
-	function(msg)
-		logMessages(msg)
-	end
+-- Szerver oldalon hívja meg az admin napló üzeneteket --
+addEvent("adminDiaryServer", true)
+addEventHandler("adminDiaryServer", resourceRoot,
+    function(message)
+	adminDiaryClient(message)
+    end
 )
