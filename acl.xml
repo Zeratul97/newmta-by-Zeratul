@@ -6,7 +6,8 @@
   <object name="resource.admin" />
   <object name="resource.webadmin" />
   <object name="resource.acpanel" />
-  <!--NewMTA mod -->
-  <object name="resource.devsystem" />
-  <object name="resource.admins" />
+  <!-- NewMTA része -->
+  <object name="resource.nwmta_banlist" />
+  <object name="resource.nwmta_whitelist" />
+  <object name="resource.nwmta_dev" />
 </group>
