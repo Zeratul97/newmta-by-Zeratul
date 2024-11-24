@@ -1,22 +1,22 @@
 -- Játékos parancsait ellenőrző esemény --
 addEventHandler("onPlayerCommand", getRootElement(),
-	function(command)
-		local disabledCommands = exports["nwmta_dev"]:getCMDDisabled(command)
-		local devSerial = exports["nwmta_dev"]:getDevSerials(source)
-		local devCommands = exports["nwmta_dev"]:getDeveloperCMD(command)
+    function(command)
+	local disabledCommands = exports["nwmta_dev"]:getCMDDisabled(command)
+	local devSerial = exports["nwmta_dev"]:getDevSerials(source)
+	local devCommands = exports["nwmta_dev"]:getDeveloperCMD(command)
 
-		if (disabledCommands) then
-			cancelEvent()
-		end
-		if (devCommands) then
-			if not (devSerial) then
-				cancelEvent()
-				outputChatBox("Nem vagy fejlesztő!", source, 255, 255, 255, true)
-			end
-		else
-			cancelEvent()
-		end
+	if (disabledCommands) then
+	    cancelEvent()
 	end
+	if (devCommands) then
+	    if not (devSerial) then
+		cancelEvent()
+		outputChatBox("Nem vagy fejlesztő!", source, 255, 255, 255, true)
+	     end
+	else
+		cancelEvent()
+	end
+   end
 )
 
 -- Pozíció lekérdezés --
