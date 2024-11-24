@@ -1,67 +1,67 @@
 -- Tiltott parancsok --
 disableCMD = {
-	["register"] = true,
-	["login"] = true,
-	["refreshall"] = true,
-	["stopall"] = true,
+     ["register"] = true,
+     ["login"] = true,
+     ["refreshall"] = true,
+     ["stopall"] = true,
 }
 
 -- Fejlesztők serial-ja 
 devSerail = {
-	--["serial"] = true, -- Ide a "serial" részre adjátok meg a fejlesztő serial-ját
+     --["serial"] = true, -- Ide a "serial" részre adjátok meg a fejlesztő serial-ját
 }
 
 -- Fejlesztői parancsok listálya --
 devCMD = {
-	-- Alap fejlesztői parancsok --
-	["start"] = true,
-	["stop"] = true,
-	["refresh"] = true,
-	["restart"] = true,
-	["debugscript"] = true,
-	["reloadacl"] = true,
+     -- Alap fejlesztői parancsok --
+     ["start"] = true,
+     ["stop"] = true,
+     ["refresh"] = true,
+     ["restart"] = true,
+     ["debugscript"] = true,
+     ["reloadacl"] = true,
 
-	-- Új fejlesztői parancsok --
-	["getpos"] = true,
-	["enableddevmode"] = true,
-	["enabledcollisions"] = true,
+     -- Új fejlesztői parancsok --
+     ["getpos"] = true,
+     ["enableddevmode"] = true,
+     ["enabledcollisions"] = true,
 }
 
 -- Fejlesztői serial ellenőrző funkció --
 function getDevSerials(player)
-	if (player) then
-		if (devSerail[getPlayerSerial(player)]) then
-			return true
-		else
-			return false
-		end
+    if (player) then
+	if (devSerail[getPlayerSerial(player)]) then
+	    return true
 	else
-		return false 
+	    return false
 	end
+    else
+	    return false 
+    end
 end
 
 -- Tiltott parancsokat ellenőrző funkció --
 function getCMDDisabled(cmd)
-	if (cmd) then
-		if (disableCMD[cmd]) then
-			return true
-		else
-			return false
-		end
+    if (cmd) then
+	if (disableCMD[cmd]) then
+	    return true
 	else
-		return false
+	    return false
 	end
+    else
+        return false
+    end
 end
 
 -- Fejlesztői parancsokat ellenőrző funkció --
 function getDeveloperCMD(cmd)
-	if (cmd) then
-		if (devCMD[cmd]) then
-			return true
-		else
-			return false
-		end
+    if (cmd) then
+	if (devCMD[cmd]) then
+	    return true
 	else
-		return false
+	    return false
 	end
+    else
+        return false
+    end
 end
