@@ -13,11 +13,11 @@ local regPasswordAgain = "" -- Jelszó újra
 
 local buttonColors = {
     ["login"] = {
-	[1] = tocolor(94, 255, 123, 220), -- Bejelentkezés gomb --
-	[2] = tocolor(255, 79, 56, 220), -- Regisztráció gomb --
+	[1] = tocolor(94, 255, 123, 180), -- Bejelentkezés gomb --
+	[2] = tocolor(255, 79, 56, 180), -- Regisztráció gomb --
     },
     ["register"] = {
-	[1] = tocolor(94, 255, 123, 200), -- Regisztráció gomb --
+	[1] = tocolor(255, 79, 56, 180), -- Regisztráció gomb --
     },
 }
 
@@ -112,12 +112,81 @@ addEventHandler("onClientRender", getRootElement(),
     end
 )
 
+-- Egér mozgatást felügyeli --
+addEventHandler("onClientCursorMove", root,
+    function(cX, cY, _, _, _, _, _)
+	if (isAccountWindow) then -- látszódik a bejelentkező felület --
+	    if (isCursorShowing()) then -- Látszódik a kurzor avagy sem --
+		if (accountPanel == "login") then
+		    if ((cX >= 0.394) and (cY >= 0.456) and (cX <= 0.595) and (cY <= 0.511)) then
+			buttonColors[accountPanel][1] = tocolor(94, 255, 123, 255)
+		    else
+			buttonColors[accountPanel][1] = tocolor(94, 255, 123, 180)
+		    end
+
+		    if ((cX >= 0.394) and (cY >= 0.528) and (cX <= 0.595) and (cY <= 0.58)) then
+			buttonColors[accountPanel][2] = tocolor(255, 79, 56, 255)
+		    else
+			buttonColors[accountPanel][2] = tocolor(255, 79, 56, 180)
+		    end
+
+
+			-- Bővíteni a beviteli mezőkkel --
+
+
+		end
+		if (accountPanel == "register") then
+		    if ((cX >= 0.394) and (cY >= 0.56) and (cX <= 0.595) and (cY <= 0.610)) then
+			buttonColors[accountPanel][1] = tocolor(255, 79, 56, 255)
+		    else
+			buttonColors[accountPanel][1] = tocolor(255, 79, 56, 180)
+		    end
+
+			-- Bővíteni a beviteli mezőkkel --
+
+
+		end
+	    end
+	end
+    end
+)
+
+-- Kattintást kezelő esemény --
+addEventHandler("onClientClick", root,
+    function(button, state, _, _, _, _, _, clickedElement)
+	if (isAccountWindow) then
+	    if (isCursorShowing()) then
+		local cX, cY = getCursorPosition()
+				
+		if (button == "left") and (state == "down") then
+		    if (accountPanel == "login") then
+			-- Bejelentkezés gomb --
+			if ((cX >= 0.394) and (cY >= 0.456) and (cX <= 0.595) and (cY <= 0.511)) then
+			    loginFunction()
+			end
+
+			-- Regisztráció gomb --
+			if ((cX >= 0.394) and (cY >= 0.528) and (cX <= 0.595) and (cY <= 0.58)) then
+			    accountPanel = "register"
+			end
+		    elseif (accountPanel == "register") then
+			if ((cX >= 0.394) and (cY >= 0.56) and (cX <= 0.595) and (cY <= 0.610)) then
+			    registracionFunction()
+			end
+		    end
+
+		end
+	    end
+	end
+
+    end
+)
 -- Regisztrációt intéző függvény --
 function registracionFunction()
-
+    --exports["nwmta_infobox"]:createInfoBox("Működik", "error")
 end
 
 -- Bejelentkezést intéző függvény --
 function loginFunction()
-
+    --exports["nwmta_infobox"]:createInfoBox("Működik", "success")
 end
