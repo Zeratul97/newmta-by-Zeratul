@@ -1,13 +1,1 @@
-<group name="Admin">
-  <acl name="Moderator" />
-  <acl name="SuperModerator" />
-  <acl name="Admin" />
-  <acl name="RPC" />
-  <object name="resource.admin" />
-  <object name="resource.webadmin" />
-  <object name="resource.acpanel" />
-  <!-- NewMTA része -->
-  <object name="resource.nwmta_banlist" />
-  <object name="resource.nwmta_whitelist" />
-  <object name="resource.nwmta_dev" />
-</group>
+
