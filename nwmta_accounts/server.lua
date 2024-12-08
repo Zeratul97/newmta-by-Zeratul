@@ -1,1 +1,0 @@
--- Szerver oldal később kerül fel(ha elkészül a stream-ben --

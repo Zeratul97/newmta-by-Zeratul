@@ -1,7 +1,0 @@
-<meta>
-    <info author="Zeratul" name="nwmta_accounts" type="script" />
-
-    <script src="client.lua" type="client" />
-    <script src="server.lua" type="server" />
-
-</meta>
