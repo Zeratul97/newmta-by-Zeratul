@@ -13,6 +13,11 @@ devCMD = {
     ["refresh"] = true,
     ["debugscript"] = true,
     ["reloadacl"] = true,
+
+    -- Új parancsok --
+    ["getpos"] = true,
+    ["devmode"] = true,
+    ["collisionshowing"] = true,
 }
 
 devSerials = {
