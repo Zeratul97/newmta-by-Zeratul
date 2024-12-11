@@ -20,3 +20,16 @@ function isServerDatas(data)
 	return false
     end
 end
+
+-- Visszaküldi a játékos munkájának nevét --
+function isPlayerJobName(player)
+    if (player) then
+	if (jobList[getElementData(player, "player >>job")]) then
+	    return jobList[getElementData(player, "player >>job")]
+	else
+	    return "Munkanélküli"
+	end
+    else
+	return false
+    end
+end
