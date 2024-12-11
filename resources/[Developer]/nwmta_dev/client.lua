@@ -33,3 +33,15 @@ function devMode(cmd)
     --end
 end
 addCommandHandler("devmode", devMode)
+-- Collision-ök megjelenítése --
+function colShowing(cmd)
+    --if (getElementData(localPlayer, "login")) then
+            local devSerial = exports["nwmta_dev"]:isPlayerDev(localPlayer)
+            if (devSerial) then
+                showCol(not isShowCollisionsEnabled())
+            end
+    --else
+            --cancelEvent()
+    --end
+end
+addCommandHandler("collisionshowing", colShowing)
