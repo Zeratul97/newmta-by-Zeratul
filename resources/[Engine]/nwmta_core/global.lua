@@ -4,6 +4,9 @@ serverDatas = {
     ["city"] = "Los Santos",
 }
 
+jobList = {
+    [0] = "Munkanélküli",
+}
 
 -- Szerver adatok átküldése --
 function isServerDatas(data)
