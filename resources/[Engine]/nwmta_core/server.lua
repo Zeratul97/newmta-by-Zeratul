@@ -11,30 +11,31 @@ addEventHandler("onResourceStart", getRootElement(),
 -- Játékos csatlakozik a szerverre --
 addEventHandler("onPlayerJoin", getRootElement(),
     function()
-        local playerName = getPlayerName(source):gsub("_", " ")
-        local banSerial = exports["nwmta_banlist"]:isSerialBan(source)
-        local reason = exports["nwmta_banlist"]:isBanReason(source)
+        local player = source
+        local playerName = getPlayerName(player):gsub("_", " ")
+        local banSerial = exports["nwmta_banlist"]:isSerialBan(player)
+        local reason = exports["nwmta_banlist"]:isBanReason(player)
         -- Ellenőrizzük a játékos serial-ja banolva van-e--
 	if (banSerial) then
-             kickPlayer(source, "Véglegesen ki lettél tiltva a szerverről! Indok:"..reason)
+             kickPlayer(player, "Véglegesen ki lettél tiltva a szerverről! Indok:"..reason)
 	else
              local resourceTable = getResources()
 	     for resourceKey, resourceValue in ipairs(resourceTable) do
 	        local resourName = getResourceName(resourceValue)
 		if (resourName == "nwmta_whitelist") then
 		    if (getResourceState(resourceValue) == "running") then
-		        local whiteSerial = exports["nwmta_whitelist"]:isWhiteSerial(source)
+		        local whiteSerial = exports["nwmta_whitelist"]:isWhiteSerial(player)
 			if not (whiteSerial) then
 			     kickPlayer(source, "A szerveren karbantartás/fejlesztés folyik!")
 			else
-			     spawnPlayer(source,  0, 0, 4, 0, 0)
-			     fadeCamera(source, true)
-			     setCameraTarget(source, source)	
+			     spawnPlayer(player,  0, 0, 4, 0, 0)
+			     fadeCamera(player, true)
+			     setCameraTarget(player, player)	
 			end
 		    else
-			spawnPlayer(source,  0, 0, 4, 0, 0)
-			fadeCamera(source, true)
-			setCameraTarget(source, source)
+			spawnPlayer(player,  0, 0, 4, 0, 0)
+			fadeCamera(player, true)
+			setCameraTarget(player, player)
 		    end
 		end
 	     end
@@ -64,7 +65,13 @@ addEventHandler("onPlayerQuit", getRootElement(),
 	end
 
 	if (quitType == "Kicked") or (quitType == "Banned") then
-	    triggerClientEvent(root, "serverLogMessage", root, "#f94d40"..playerName.."#6bbfff kilépett a szerverről! Oka: #f94d40"..quitTypeText.."#6bbfff Indok: #f94d40"..reason.."#6bbfff Felelős: #f94d40"..responsibleElement.."#6bbfff !")
+	    local respText = ""
+	    if (getElementType(responsibleElement) == "player") then
+                 respText = getPlayerName(responsibleElement)
+	    else
+                 respText = "Konzol"
+	    end
+	    triggerClientEvent(root, "serverLogMessage", root, "#f94d40"..playerName.."#6bbfff kilépett a szerverről! Oka: #f94d40"..quitTypeText.."#6bbfff Indok: #f94d40"..reason.."#6bbfff Felelős: #f94d40"..respText.."#6bbfff !")
 	else
 	    triggerClientEvent(root, "serverLogMessage", root, "#f94d40"..playerName.."#6bbfff kilépett a szerverről! Oka: #f94d40"..quitTypeText.."#6bbfff!")
 	end	
