@@ -14,5 +14,5 @@ addEventHandler("onClientPlayerDamage", getRootElement(),
 
               end
           end
-	end
+     end
 )
