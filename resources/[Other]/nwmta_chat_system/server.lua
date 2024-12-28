@@ -23,10 +23,10 @@ addEventHandler("onPlayerChat", getRootElement(),
                                    end
                                end
                            end
-						           --end
+		     --end
                    end
                 end
-		    --end
-		    end
+	   --end
+         end
     end
 )
