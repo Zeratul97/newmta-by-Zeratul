@@ -1,9 +1,9 @@
 -- Kurzor megjelenítése --
 function cursorShowing()
     if (isCursorShowing()) then
-		    showCursor(false)
+	showCursor(false)
     else
-		    showCursor(true)
+	showCursor(true)
     end
 end
 bindKey("m", "up", cursorShowing)
