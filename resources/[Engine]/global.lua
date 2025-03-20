@@ -1,3 +1,4 @@
+-- Szerver adatok --
 serverDatas = {
     ["name"] = "NewMTA",
     ["version"] = "v0.0.1",
@@ -6,6 +7,7 @@ serverDatas = {
     ["developer"] = "Zeratul & Fejlesztő neve",
 }
 
+-- Szerver adatok átküldése
 function isServerData(data)
     if (data) then
 	if (serverDatas[data]) then
