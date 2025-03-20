@@ -7,6 +7,7 @@ találni ebben a fájlban.
 Fejlesztések:
   - 1.) Szerver név beállítása
   - 2.) Szerver Városának beállítása
+  - 3.) Kliens oldal bővítve lett a kurzor megjelenítésével
 
 # Fixálások: 
   - 1.) Szerver nevét nem küldi át egy másik scriptnek, ha az nwmta_engine fájlt újra indítják.
