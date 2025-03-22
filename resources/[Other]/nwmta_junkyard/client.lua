@@ -82,20 +82,20 @@ addEventHandler("onClientMarkerLeave", getRootElement(),
 )
 
 addEventHandler("onClientClick", getRootElement(),
-	function(button, state, _, _, _, _, _, _)
-		if (button == "left") and (state == "up") then
-			if (isInSlot(screenX/2-130, screenY/2-35, 120, 30)) then
-				isJunkYardPanel = false
-				removeEventHandler("onClientRender", getRootElement(), junkYardRender)
-				local vehicle = getPedOccupiedVehicle(localPlayer)
+    function(button, state, _, _, _, _, _, _)
+         if (button == "left") and (state == "up") then
+            if (isInSlot(screenX/2-130, screenY/2-35, 120, 30)) then
+		isJunkYardPanel = false
+		removeEventHandler("onClientRender", getRootElement(), junkYardRender)
+		local vehicle = getPedOccupiedVehicle(localPlayer)
 				
-				triggerServerEvent("vehicleDestroy", resourceRoot, vehicle)
-			elseif (isInSlot(screenX/2+55, screenY/2-35, 120, 30)) then
-				isJunkYardPanel = false
-				removeEventHandler("onClientRender", getRootElement(), junkYardRender)
-			end
-		end
-	end
+		triggerServerEvent("vehicleDestroy", resourceRoot, vehicle)
+            elseif (isInSlot(screenX/2+55, screenY/2-35, 120, 30)) then
+		isJunkYardPanel = false
+		removeEventHandler("onClientRender", getRootElement(), junkYardRender)
+            end
+         end
+    end
 )
 
 -- Egér ellenőrzés --
