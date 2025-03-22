@@ -17,17 +17,17 @@ function isPlayerAdmin(player)
 end
 
 function isPlayerAdminTitle(player)
-	if (player) then
-		if (getElementData(player, "admin >> Level") > 0) then
-			if (adminTitle[getElementData(player, "admin >> Level")]) then
-				return adminTitle[getElementData(player, "admin >> Level")]
-			else
-				return false
-			end
-		else
-			return false
-		end
-	else
+    if (player) then
+	if (getElementData(player, "admin >> Level") > 0) then
+	    if (adminTitle[getElementData(player, "admin >> Level")]) then
+		return adminTitle[getElementData(player, "admin >> Level")]
+	    else
 		return false
+	    end
+	else
+	    return false
 	end
+    else
+	return false
+    end
 end
