@@ -14,3 +14,12 @@ Fejlesztések:
   - 1.) Szerver nevét nem küldi át egy másik scriptnek, ha az nwmta_engine fájlt újra indítják.
 
 ############################ 2025.03.20
+
+############################ v0.0.0
+Fejlesztések:
+  - 1.) nwmta_admins mappa létrehozva
+  - 2.) Admin log hozzá adva a rendszerhez
+  - 3.) Admin rangok színei hozzá adva a rendszerhez
+  - 4.) Log hozzá adva a rendszerhez
+
+############################ 2025.03.22
