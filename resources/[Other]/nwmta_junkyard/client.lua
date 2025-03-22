@@ -50,7 +50,7 @@ addEventHandler("onClientMarkerHit", getRootElement(),
 		if (vehicle) then
 		    if (seat == 0) then
 			--if not ( (getElementData(vehicle, "vehicle >> rent")) and (getElementData(vehicle, "vehicle >> job"))) then
-			      exports["store_infobox"]:createInfoBox("Munka járművet / Bérelt járművet nem adhatsz le!", "error")
+			      exports["nwmta_infobox"]:createInfoBox("Munka járművet / Bérelt járművet nem adhatsz le!", "error")
 			--else
 			      isJunkYardPanel = true
 			      removeEventHandler("onClientRender", getRootElement(), junkYardRender)
