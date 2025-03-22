@@ -65,20 +65,20 @@ addEventHandler("onClientMarkerHit", getRootElement(),
 
 
 addEventHandler("onClientMarkerLeave", getRootElement(),
-	function(element, mDim)
-		--if (getElementData(localPlayer, "login")) then
-			if (getElementData(source, "marker >> junkyard") == true) then
-				local vehicle = getPedOccupiedVehicle(localPlayer)
-				local seat = getPedOccupiedVehicleSeat(localPlayer)
-				if (vehicle) then
-					if (seat == 0) then
-						isJunkYardPanel = false
-						removeEventHandler("onClientRender", getRootElement(), junkYardRender)
-					end
-				end
-			end
-		--end
-	end
+    function(element, mDim)
+         --if (getElementData(localPlayer, "login")) then
+            if (getElementData(source, "marker >> junkyard") == true) then
+		local vehicle = getPedOccupiedVehicle(localPlayer)
+		local seat = getPedOccupiedVehicleSeat(localPlayer)
+		if (vehicle) then
+		    if (seat == 0) then
+			isJunkYardPanel = false
+			removeEventHandler("onClientRender", getRootElement(), junkYardRender)
+		    end
+		end
+            end
+         --end
+    end
 )
 
 addEventHandler("onClientClick", getRootElement(),
