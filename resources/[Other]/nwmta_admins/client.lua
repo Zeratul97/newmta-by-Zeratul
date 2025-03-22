@@ -11,9 +11,9 @@ end
 -- Szerver oldali Log --
 addEvent("serverLogMessage", true)
 addEventHandler("serverLogMessage", root,
-	function(message)
-		logMessage(message)
-	end
+    function(message)
+	logMessage(message)
+    end
 )
 
 -- Admin napló üzenet --
