@@ -7,9 +7,9 @@ local adminHelperColor = {"#ecbfd3", "#c3b3ec", "#ffffff"}
 function isPlayerAdmin(player)
     if (player) then
 	if (getElementData(player, "admin") == true) then
-			return true
+	     return true
 	else
-			return false
+	     return false
 	end
     else
 	return false
