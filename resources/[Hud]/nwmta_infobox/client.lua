@@ -105,3 +105,9 @@ function createAnimation(f, t, easing, duration, onChange, onEnd)
     table.insert(anims, {from = f, to = t, easing = table.find(builtins, easing) and easing or builtins[easing], duration = duration, start = getTickCount( ), onChange = onChange, onEnd = onEnd})
     return #anims
 end
+
+function destroyAnimation(a)
+    if anims[a] then
+        table.remove(anims, a)
+    end
+end
