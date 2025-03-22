@@ -17,7 +17,7 @@ function junkYardRender()
 	    dxDrawText(modName.." - Autó bontó", screenX/2+20, screenY/2-100, screenX/2+20, screenY/2-100, tocolor(255, 255, 255, 255), 1.2, "default-bold", "center", "center", false, false, false, false, false)
 			
 	    -- Panel háttér --
-	    dxDrawRectangle(screenX/2-180, screenY/2-80, 400, 100, tocolor(0, 0, 180, 180))
+	    dxDrawRectangle(screenX/2-180, screenY/2-80, 400, 100, tocolor(0, 0, 0, 210))
 	    dxDrawText("Le akarod adni a járművet a bontóba?", screenX/2+20, screenY/2-60, screenX/2+20, screenY/2-60, tocolor(255, 255, 255, 255), 1.2, "default-bold", "center", "center", false, false, false, false, false)
 		
 	    dxDrawRectangle(screenX/2-130, screenY/2-35, 120, 30, buttonColor[1])
