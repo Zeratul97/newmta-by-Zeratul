@@ -5,15 +5,15 @@ local adminHelperColor = {"#ecbfd3", "#c3b3ec", "#ffffff"}
 
 -- Ellenőrzi hogy a játékos admin-e avagy sem --
 function isPlayerAdmin(player)
-	if (player) then
-		if (getElementData(player, "admin") == true) then
+    if (player) then
+	if (getElementData(player, "admin") == true) then
 			return true
-		else
-			return false
-		end
 	else
-		return false
+			return false
 	end
+    else
+	return false
+    end
 end
 
 function isPlayerAdminTitle(player)
