@@ -83,3 +83,35 @@ addEventHandler("sendDoMessageServer", getRootElement(),
         end
     end
 )
+
+function shoutMessage(player, cmd, ...)
+    --if (getElementData(player, "login")) then
+        if not (...) then
+			outputChatBox("Szintaxis: /"..cmd.." [Üzenet]", player, 255, 194, 14)
+        else
+	    if not (isPedDead(player)) then
+                   local x, y, z = getElementPosition(player)
+                   local int = getElementInterior(player)
+                   local dim = getElementDimension(player)
+                   for i, players in ipairs(getElementsByType("player")) do
+			--if (getElementData(players, "login")) then
+			    local pX, pY, pZ = getElementPosition(players)
+			    local pInt = getElementInterior(players)
+			    local pDim = getElementDimension(players)
+			    if (int == pInt) then
+				if (dim == pDim) then
+				    local distance = getDistanceBetweenPoints3D(x, y, z, pX, pY, pZ)
+				    if (distance < 30) then
+					local playerName = exports["nwmta_core"]:isPlayerName(player)
+					local message = table.concat({...}, " ")
+					outputChatBox(playerName.." kiáltja: "..message, players, 255, 255, 255)
+				    end
+				end
+			    end
+			--end
+                   end
+	    end
+        end
+    --end
+end
+addCommandHandler("s", shoutMessage)
