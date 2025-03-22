@@ -1,1 +1,14 @@
+<meta>
+    <info author="Zeratul" type="script" name="nwmta_dev" />
 
+    <script src="global.lua" type="shared" cache="false" />
+    <script src="server.lua" type="server" />
+    <script src="client.lua" type="client" cache="false" />
+
+    <export function="isDisabledCMD" type="shared" />
+    <export function="isDevCMD" type="shared" />
+    <export function="isPlayerDev" type="shared"/>
+
+
+    <min_mta_version server="1.5.6" client="1.5.6" />
+</meta>
