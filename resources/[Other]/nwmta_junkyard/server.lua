@@ -6,6 +6,6 @@ setElementInterior(junkYardMarker, 0)
 addEvent("vehicleDestroy", true)
 addEventHandler("vehicleDestroy", resourceRoot,
     function(vehicle)
-		    destroyElement(vehicle)
+	destroyElement(vehicle)
     end
 )
