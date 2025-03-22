@@ -9,35 +9,35 @@ local buttonColor = {
 
 
 function junkYardRender()
-	--if (getElementData(localPlayer, "login") == true) then
-		if (isJunkYardPanel) then
+    --if (getElementData(localPlayer, "login") == true) then
+	if (isJunkYardPanel) then
 
-			-- Panel fejléc --
-			dxDrawRectangle(screenX/2-180, screenY/2-120, 400, 40, tocolor(0, 0, 0, 180))
-			dxDrawText(modName.." - Autó bontó", screenX/2+20, screenY/2-100, screenX/2+20, screenY/2-100, tocolor(255, 255, 255, 255), 1.2, "default-bold", "center", "center", false, false, false, false, false)
+	    -- Panel fejléc --
+	    dxDrawRectangle(screenX/2-180, screenY/2-120, 400, 40, tocolor(0, 0, 0, 180))
+	    dxDrawText(modName.." - Autó bontó", screenX/2+20, screenY/2-100, screenX/2+20, screenY/2-100, tocolor(255, 255, 255, 255), 1.2, "default-bold", "center", "center", false, false, false, false, false)
 			
-			-- Panel háttér --
-			dxDrawRectangle(screenX/2-180, screenY/2-80, 400, 100, tocolor(0, 0, 180, 180))
-			dxDrawText("Le akarod adni a járművet a bontóba?", screenX/2+20, screenY/2-60, screenX/2+20, screenY/2-60, tocolor(255, 255, 255, 255), 1.2, "default-bold", "center", "center", false, false, false, false, false)
+	    -- Panel háttér --
+	    dxDrawRectangle(screenX/2-180, screenY/2-80, 400, 100, tocolor(0, 0, 180, 180))
+	    dxDrawText("Le akarod adni a járművet a bontóba?", screenX/2+20, screenY/2-60, screenX/2+20, screenY/2-60, tocolor(255, 255, 255, 255), 1.2, "default-bold", "center", "center", false, false, false, false, false)
 		
-			dxDrawRectangle(screenX/2-130, screenY/2-35, 120, 30, buttonColor[1])
-			dxDrawText("Igen", screenX/2-125, screenY/2-20, screenX/2-10, screenY/2-20, tocolor(255, 255, 255, 255), 1.2, "default-bold", "center", "center", false, false, false, false, false)
+	    dxDrawRectangle(screenX/2-130, screenY/2-35, 120, 30, buttonColor[1])
+	    dxDrawText("Igen", screenX/2-125, screenY/2-20, screenX/2-10, screenY/2-20, tocolor(255, 255, 255, 255), 1.2, "default-bold", "center", "center", false, false, false, false, false)
 
-			dxDrawRectangle(screenX/2+55, screenY/2-35, 120, 30, buttonColor[2])
-			dxDrawText("Mégse", screenX/2+60, screenY/2-20, screenX/2+170, screenY/2-20, tocolor(255, 255, 255, 255), 1.2, "default-bold", "center", "center", false, false, false, false, false)
+	    dxDrawRectangle(screenX/2+55, screenY/2-35, 120, 30, buttonColor[2])
+	    dxDrawText("Mégse", screenX/2+60, screenY/2-20, screenX/2+170, screenY/2-20, tocolor(255, 255, 255, 255), 1.2, "default-bold", "center", "center", false, false, false, false, false)
 			
-			if (isInSlot(screenX/2-130, screenY/2-35, 120, 30)) then
-				buttonColor[1] = tocolor(0, 255, 0, 200)
-			else
-				buttonColor[1] = tocolor(0, 150, 0, 200)
-			end
-			if (isInSlot(screenX/2+55, screenY/2-35, 120, 30)) then
-				buttonColor[2] = tocolor(255, 0, 0, 200)
-			else
-				buttonColor[2] = tocolor(150, 0, 0, 200)
-			end
-		end
-	--end
+	    if (isInSlot(screenX/2-130, screenY/2-35, 120, 30)) then
+		buttonColor[1] = tocolor(0, 255, 0, 200)
+	    else
+		buttonColor[1] = tocolor(0, 150, 0, 200)
+	    end
+	    if (isInSlot(screenX/2+55, screenY/2-35, 120, 30)) then
+		buttonColor[2] = tocolor(255, 0, 0, 200)
+	    else
+		buttonColor[2] = tocolor(150, 0, 0, 200)
+	    end
+	end
+    --end
 end
 
 
