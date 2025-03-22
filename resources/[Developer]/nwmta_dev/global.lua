@@ -1,8 +1,8 @@
 -- Titlott parancsok --
 disabledCMD = {
-	   ["login"] = true,
-	   ["register"] = true,
-	   ["refreshall"] = true,
+    ["login"] = true,
+    ["register"] = true,
+    ["refreshall"] = true,
 }
 
 -- Fejlesztői parancsok --
