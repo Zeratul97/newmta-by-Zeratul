@@ -26,15 +26,15 @@ devSerials = {
 
 -- Ellenőrzi hogy a parancs tiltva van-e --
 function isDisabledCMD(cmd)
-	if (cmd) then
-		if (disabledCMD[cmd]) then
-			return true
-		else
-			return false
-		end
+    if (cmd) then
+	if (disabledCMD[cmd]) then
+	    return true
 	else
-		return false
+	    return false
 	end
+    else
+	return false
+    end
 end
 
 -- Ellenőrzi hogy a parancs fejlesztői parancs-e --
