@@ -85,3 +85,25 @@ function kickPlayer(player, cmd, target, ...)
     end
 end
 addCommandHandler("kick", kickPlayer, false, false)
+
+-- Admin szolgálatba állás /aduty vagy /adminduty --
+function adminDuty(player, cmd)
+    --if (getElementData(player, "login") == true) then
+        local admin = exports["nwmta_admins"]:isPlayerAdmin(player)
+        if (admin) then
+            if (tonumber(getElementData(player, "admin >> level")) > 0) then
+		if (getElementData(player, "admin >> duty") == false) then
+		    setElementData(player, "admin >> duty", true)
+		    local adminNick = getElementData(player, "admin >> nick") or "Ismeretlen"
+		    triggerClientEvent(root, "infobox", root, adminNick.." adminszolgálatba lépett!", "info")
+		else
+		    setElementData(player ,"admin >> duty", false)
+		    local adminNick = getElementData(player, "admin >> nick") or "Ismeretlen"
+		    triggerClientEvent(root, "infobox", root, adminNick.." kilépett adminszolgálatból!", "info")
+		end
+            end
+        end
+    --end
+end
+addCommandHandler("aduty", adminDuty, false, false)
+addCommandHandler("adminduty", adminDuty, false, false)
