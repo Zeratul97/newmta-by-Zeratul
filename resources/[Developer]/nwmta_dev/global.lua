@@ -7,21 +7,21 @@ disabledCMD = {
 
 -- Fejlesztői parancsok --
 devCMD = {
-	["start"] = true,
-	["stop"] = true,
-	["restart"] = true,
-	["refresh"] = true,
-	["debugscript"] = true,
-	["reloadacl"] = true,
+    ["start"] = true,
+    ["stop"] = true,
+    ["restart"] = true,
+    ["refresh"] = true,
+    ["debugscript"] = true,
+    ["reloadacl"] = true,
 
-	-- Új parancsok --
-	["getpos"] = true,
-	["devmode"] = true,
-	["collisionshowing"] = true,
+    -- Új parancsok --
+    ["getpos"] = true,
+    ["devmode"] = true,
+    ["collisionshowing"] = true,
 }
 
 devSerials = {
-	["3EEE639776EC134366D2D005508912F3"] = true,
+    ["3EEE639776EC134366D2D005508912F3"] = true,
 }
 
 -- Ellenőrzi hogy a parancs tiltva van-e --
