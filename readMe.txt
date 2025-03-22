@@ -26,6 +26,7 @@ Fejlesztések:
   - 7.) Játékos kirúgása a /kick paranccsal
   - 8.) Roncstelep script bekerült
   - 9.) Sasha infobox-a bekerült. Videó: https://www.youtube.com/watch?v=KHIAVDoH5NA
+  - 10.) Admin szolgálatba lépés hozzáadva az admin rendszerhez
 
 # Fixálások: 
   - 1.) Infobox szerveroldalról meghívható, hozzáadta: Zeratul
