@@ -4,3 +4,7 @@ exports["nwmta_engine"]:isServerData("name") -- Szerver adatok vissza kérése -
 ################### [Other/nwmta_admins] ###################
 exports["nwmta_admins"]:isPlayerAdmin(player) -- Ellenőrzi hogy a játékos admin-e, igaz értékkel tér vissza ha admin.
 exports["nwmta_admins"]:isPlayerAdminTitle(player) -- Admin rang vissza küldése 
+
+################### [Hud/nwmta_infobox] ###################
+exports["nwmta_infobox"]:createInfoBox("Az emailcímnek tartalmaznia kell .com, .hu, .eu végződéseket! ", "error") -- Kliens
+triggerClientEvent(player, "infobox", player, "Ezzel az email címmel már regisztráltak!", "error") -- Szerver
