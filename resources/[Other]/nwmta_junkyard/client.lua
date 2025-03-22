@@ -42,25 +42,25 @@ end
 
 
 addEventHandler("onClientMarkerHit", getRootElement(),
-	function(element, mDim)
-		--if (getElementData(localPlayer, "login")) then
-			if (getElementData(source, "marker >> junkyard") == true) then
-				local vehicle = getPedOccupiedVehicle(localPlayer)
-				local seat = getPedOccupiedVehicleSeat(localPlayer)
-				if (vehicle) then
-					if (seat == 0) then
-						--if not ( (getElementData(vehicle, "vehicle >> rent")) and (getElementData(vehicle, "vehicle >> job"))) then
-						--	exports["store_infobox"]:createInfoBox("Munka járművet / Bérelt járművet nem adhatsz le!", "error")
-						--else
-							isJunkYardPanel = true
-							removeEventHandler("onClientRender", getRootElement(), junkYardRender)
-							addEventHandler("onClientRender", getRootElement(), junkYardRender)
-						--end
-					end
-				end
-			end
-		--end
-	end
+    function(element, mDim)
+         --if (getElementData(localPlayer, "login")) then
+            if (getElementData(source, "marker >> junkyard") == true) then
+		local vehicle = getPedOccupiedVehicle(localPlayer)
+		local seat = getPedOccupiedVehicleSeat(localPlayer)
+		if (vehicle) then
+		    if (seat == 0) then
+			--if not ( (getElementData(vehicle, "vehicle >> rent")) and (getElementData(vehicle, "vehicle >> job"))) then
+			      exports["store_infobox"]:createInfoBox("Munka járművet / Bérelt járművet nem adhatsz le!", "error")
+			--else
+			      isJunkYardPanel = true
+			      removeEventHandler("onClientRender", getRootElement(), junkYardRender)
+			      addEventHandler("onClientRender", getRootElement(), junkYardRender)
+			--end
+		    end
+		end
+            end
+         --end
+    end
 )
 
 
