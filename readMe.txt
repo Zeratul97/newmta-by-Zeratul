@@ -25,5 +25,8 @@ Fejlesztések:
   - 6.) Bekerült a játékos beazonosítás a rendszer magjába(nwmta_engine)
   - 7.) Játékos kirúgása a /kick paranccsal
   - 8.) Roncstelep script bekerült
+  - 9.) Sasha infobox-a bekerült. Videó: https://www.youtube.com/watch?v=KHIAVDoH5NA
 
+# Fixálások: 
+  - 1.) Infobox szerveroldalról meghívható, hozzáadta: Zeratul
 ############################ 2025.03.22
