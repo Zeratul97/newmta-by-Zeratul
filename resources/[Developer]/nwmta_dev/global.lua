@@ -39,26 +39,26 @@ end
 
 -- Ellenőrzi hogy a parancs fejlesztői parancs-e --
 function isDevCMD(cmd)
-	if (cmd) then
-		if (devCMD[cmd]) then
-			return true
-		else
-			return false
-		end
+    if (cmd) then
+	if (devCMD[cmd]) then
+	    return true
 	else
-		return false
+	    return false
 	end
+    else
+	return false
+    end
 end
 
 -- Ellenőrzi hogy a játékos fejlesztő-e vagy sem --
 function isPlayerDev(player)
-	if (player) then
-		if (devSerials[getPlayerSerial(player)]) then
-			return true
-		else
-			return false
-		end
+    if (player) then
+	if (devSerials[getPlayerSerial(player)]) then
+	    return true
 	else
-		return false
+	    return false
 	end
+    else
+	return false
+    end
 end
