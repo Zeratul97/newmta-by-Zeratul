@@ -43,3 +43,45 @@ function adminSay(player, cmd, ...)
     --end
 end
 addCommandHandler("asay", adminSay, false, false)
+
+-- Játékos kirúgása: --
+function kickPlayer(player, cmd, target, ...)
+    if (getElementData(player, "login") == true) then
+        local admin = exports["nwmta_admins"]:isPlayerAdmin(player)
+        local devSerial = exports["nwmta_dev"]:isPlayerDev(player)
+        local reason = table.concat({...}, " ")
+        if (admin) then
+	    if (getElementData(player, "admin >> level") > 0) then
+		if not (getElementData(player, "admin >> duty")) then
+                     outputChatBox("#d9534f["..modName.."]: #FFFFFFCsak szolgálatban használhatod a /"..cmd.." parancsot!", player, 255, 0, 0, true)
+		else
+                     if not (target or (...)) then
+			  outputChatBox("#FFC000[Szintaxis]: /"..cmd.." [Játékos] [Indok]", player, 255, 255, 255, true)
+                     else
+			  local targetPlayer = exports["nwmta_engine"]:findPlayer(player, target)
+			  if (targetPlayer) then
+			      local adminNick = getElementData(player, "admin >> nick") or "Ismeretlen"
+			      outputChatBox("#f68c2b[Kick]: #ef564b"..adminNick.."#FFC000 kirúgta a szerverről, #ef564b"..getPlayerName(targetPlayer).."#FFC000 nevű játékost!", root, 255, 255, 255, true)
+			      outputChatBox("#f68c2b[Kick]: Indok: #ef564b"..reason:gsub("_", " "), root, 255, 255, 255, true)
+			      kickPlayer(targetPlayer, adminNick, reason:gsub("_", " "))
+			  end
+                     end
+		end
+	    end
+        end
+        if (devSerial) then
+	    if not (target or (...)) then
+		outputChatBox("#FFC000[Szintaxis]: /"..cmd.." [Játékos] [Indok]", player, 255, 255, 255, true)
+	    else
+		local targetPlayer = exports["nwmta_engine"]:findPlayer(player, target)
+		if (targetPlayer) then
+		    local adminNick = getElementData(player, "admin >> nick") or "Ismeretlen"
+		    outputChatBox("#f68c2b[Kick]: #ef564b"..adminNick.."#FFC000 kirúgta a szerverről, #ef564b"..getPlayerName(targetPlayer).."#FFC000 nevű játékost!", root, 255, 255, 255, true)
+		    outputChatBox("#f68c2b[Kick]: Indok: #ef564b"..reason:gsub("_", " "), root, 255, 255, 255, true)
+		    kickPlayer(targetPlayer, adminNick, reason:gsub("_", " "))
+		end
+	    end
+        end
+    end
+end
+addCommandHandler("kick", kickPlayer, false, false)
