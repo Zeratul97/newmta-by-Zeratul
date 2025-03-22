@@ -57,3 +57,29 @@ addEventHandler("sendMeMessageServer", getRootElement(),
         end
     end
 )
+
+addEvent("sendDoMessageServer", true)
+addEventHandler("sendDoMessageServer", getRootElement(),
+    function(player, message)
+        local x, y, z = getElementPosition(player)
+        local int = getElementInterior(player)
+        local dim = getElementDimension(player)
+
+        for i, players in ipairs(getElementsByType("player")) do
+	    --if (getElementData(players, "login")) then
+                   local pX, pY, pZ = getElementPosition(players)
+                   local pInt = getElementInterior(players)
+                   local pDim = getElementDimension(players)
+                   if (int == pInt) then
+			if (dim == pDim) then
+			    local distance = getDistanceBetweenPoints3D(x, y, z, pX, pY, pZ)
+			    if (distance < 30) then
+				local playerName = exports["nwmta_core"]:isPlayerName(player)
+				outputChatBox("* "..message.." ["..playerName.."]", players, 255, 51, 102, true)
+			    end
+			end
+                   end
+	    --end
+        end
+    end
+)
