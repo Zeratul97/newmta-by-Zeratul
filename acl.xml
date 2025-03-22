@@ -10,4 +10,4 @@
     <object name="resource.nwmta_admins"></object>
     <object name="resource.nwmta_banlist"></object>
     <object name="resource.nwmta_whitelist"></object>
-    </group>
+</group>
