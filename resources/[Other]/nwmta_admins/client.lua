@@ -26,7 +26,7 @@ end
 
 addEvent("serverAdminDiaryMessage", true)
 addEventHandler("serverAdminDiaryMessage", root,
-	function(message)
-		adminDiaryMessage(message)
-	end
+    function(message)
+	adminDiaryMessage(message)
+    end
 )
