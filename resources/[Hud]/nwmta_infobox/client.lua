@@ -86,3 +86,12 @@ function renderInfoBox()	--Végig megyünk az üzeneteken
     end
 end
 addEventHandler("onClientRender", root, renderInfoBox) 
+
+function table.find(t, v)
+    for k, a in ipairs(t) do
+        if a == v then
+	   return k
+        end
+    end
+    return false
+end
