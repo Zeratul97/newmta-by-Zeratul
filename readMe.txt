@@ -21,5 +21,8 @@ Fejlesztések:
   - 2.) Admin log hozzá adva a rendszerhez
   - 3.) Admin rangok színei hozzá adva a rendszerhez
   - 4.) Log hozzá adva a rendszerhez
+  - 5.) Játékosok felcsatlakozáskor kapnak ID-t
+  - 6.) Bekerült a játékos beazonosítás a rendszer magjába(nwmta_engine)
+  - 7.) Játékos kirúgása a /kick paranccsal
 
 ############################ 2025.03.22
