@@ -60,3 +60,29 @@ function createInfoBox(message, itype)
 	end)
     end)
 end
+
+--------------------------------------------------------------------------------
+function renderInfoBox()	--Végig megyünk az üzeneteken
+    local i = 0
+    for _,v in pairs(messages) do
+        v.x = screen.x/2 - v.w/2
+        -- Szöveg háttere
+        dxDrawRectangle(v.x, v.y + i*v.h + i*10, v.w, v.h, tocolor(31, 31, 31, 170*v.opacity));
+        --Ikon háttere
+        dxDrawRectangle(v.x, v.y + i*v.h + i*10, v.h, v.h, tocolor(0, 0, 80, 170*v.opacity));
+
+        --Ikon
+        dxDrawImage(v.x, v.y + i*v.h + i*10, v.h, v.h, itypes[v.itype], 0, 0, 0, tocolor(255, 255, 255, 255*v.opacity))
+
+        --Szöveg
+        dxDrawText(v.message, 
+             v.x + v.h + 5, 
+             v.y + i*v.h + i*10 + v.h/2 - dxGetFontHeight(1, font)/2, 
+             v.x + v.w, 
+             v.y + i*v.h + i*10 + v.h, 
+             tocolor(255, 255, 255, 255*v.opacity), 1, font, "left", "top", true)
+
+        i = i + 1
+    end
+end
+addEventHandler("onClientRender", root, renderInfoBox) 
