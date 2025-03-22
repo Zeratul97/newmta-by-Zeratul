@@ -1,6 +1,7 @@
 <group name="Admin">
-        <acl name="Moderator"></acl>
-        <acl name="SuperModerator"></acl>
-        <acl name="Admin"></acl>
-        <acl name="RPC"></acl>
-<object name="resource.nwmta_admins" />
+    <acl name="Moderator"></acl>
+    <acl name="SuperModerator"></acl>
+    <acl name="Admin"></acl>
+    <acl name="RPC"></acl>
+    <object name="resource.nwmta_admins" />
+</group>
