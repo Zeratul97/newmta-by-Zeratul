@@ -17,8 +17,8 @@ local messages = {};
 addEvent("infobox", true)
 addEventHandler("infobox", localPlayer,
     function(message, itype) 
-		    --createInfoBox(message, itype, playSound("infobox/files/sounds/"..itype..".mp3"))
-		    createInfoBox(message, itype)
-		    return
+	--createInfoBox(message, itype, playSound("infobox/files/sounds/"..itype..".mp3"))
+	createInfoBox(message, itype)
+	return
     end
 )
