@@ -25,3 +25,21 @@ function getAdminPos(player, cmd)
     --end
 end	
 addCommandHandler("getpos", getAdminPos, false, false)
+
+-- Admin felhívás /asay --
+function adminSay(player, cmd, ...)
+	local admin = exports["nwmta_admins"]:isPlayerAdmin(player)
+	local devSerial = exports["nwmta_dev"]:isPlayerDev(player)
+	--if (getElementData(player, "login") == true) then
+		if (admin) or (devSerial) then
+			if not (...) then
+				outputChatBox("#FFC000[Szintaxis]: /"..cmd.." [Üzenet]", player, 255, 255, 255, true)
+			else
+				local message = table.concat({...}, " ")
+				local adminNick = getElementData(player, "admin >> nick") or "Ismeretlen"
+				outputChatBox("#ef564b[Admin felhívás]: "..adminNick..": "..message, root, 255, 255, 255, true)
+			end
+		end
+	--end
+end
+addCommandHandler("asay", adminSay, false, false)
