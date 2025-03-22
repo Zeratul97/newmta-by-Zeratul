@@ -111,3 +111,16 @@ function destroyAnimation(a)
         table.remove(anims, a)
     end
 end
+
+addEventHandler("onClientRender", root, function( )
+    local now = getTickCount( )
+    for k,v in ipairs(anims) do
+        v.onChange(interpolateBetween(v.from, 0, 0, v.to, 0, 0, (now - v.start) / v.duration, v.easing))
+        if now >= v.start+v.duration then
+            if type(v.onEnd) == "function" then
+                v.onEnd( )
+            end
+            table.remove(anims, k)
+        end
+    end
+end)
