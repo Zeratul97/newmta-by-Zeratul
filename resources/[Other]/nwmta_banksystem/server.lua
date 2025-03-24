@@ -83,6 +83,11 @@ addCommandHandler("createatm", createAtmFunction, false, false)
 -- Atm törlése --
 function deleteAtmFunction(player, cmd, id)
     --if (getElementData(player, "login")) then
-	
+	local admin = exports["nwmta_admins"]:isPlayerAdmin(player)
+	local devSerial = exports["nwmta_dev"]:isPlayerDev(player)
+	if (admin) then
+	end
+	if (devSerial) then
+	end
     --end
 end
