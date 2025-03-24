@@ -31,6 +31,24 @@ function createAtmFunction(player, cmd)
 	if (admin) then
             if (getElementData(player, "admin >> duty")) then
 		if (getElementData(player, "admin >> level") >= 4) then
+		    local x,y,z = getElementPosition(player)
+		    local interior = getElementInterior(player)
+		    local dimenzio = getElementDimension(player)
+		    local rotx, roty, rotz = getElementRotation(player)
+		    dbExec(con, "INSERT INTO atms SET xPos=?, yPos=?, zPos=?, rotation=?, dimension=?, interior=?", x, y-1, z-0.35, rotz+1, dimenzio, interior)
+		    dbQuery(
+	                function(data)
+                            local results, lines = dbPoll(data, 500)
+                            if (lines > 0) then
+                                atmLoads(results[1])
+                                local adminNick = getElementData(player, "admin >> nick") or "Ismeretlen"
+                                outputChatBox("#8dec62["..modName.."]:#ffffff Sikeresen létrehoztál egy ATM-et! ID: #5db1fd"..results[1].id.."", player, 255, 255, 255, true)
+                                triggerClientEvent(root, "serverAdminDiaryMessage", root, "#ef564b"..adminNick.." #6bbffflétrehozott egy ATM-et, ATM ID-je: #ef564b"..results[1].id.." #6bbfff!")
+                            else
+                                outputChatBox("#ef564b["..modName.."]: ATM létrehozás sikertelen volt!", player, 255, 255, 255, true)
+                            end
+	                end, con, "SELECT * FROM atms WHERE id=LAST_INSERT_ID()"
+		    )
 		else
 		    outputChatBox("#ef564b Nem vagy elég magas rangú admin!", player, 255, 255, 255, true)
 		end
