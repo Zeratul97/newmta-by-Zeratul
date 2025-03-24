@@ -36,5 +36,6 @@ Fejlesztések:
 Fejlesztések:
   - 1.) Mysql adatbázis csatlakozás létrehozva
   - 2.) nwmta.sql fájl létrehozva
+  - 3.) Bank rendszer létre lett hozva szerver oldal részben elkészült(atm létrehozás, törlés, mentés)
 
 ############################ 2025.03.24
