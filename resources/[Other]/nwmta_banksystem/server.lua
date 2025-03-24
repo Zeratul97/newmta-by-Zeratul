@@ -78,3 +78,11 @@ function createAtmFunction(player, cmd)
 	end
     --end
 end
+addCommandHandler("createatm", createAtmFunction, false, false)
+
+-- Atm törlése --
+function deleteAtmFunction(player, cmd, id)
+    --if (getElementData(player, "login")) then
+	
+    --end
+end
