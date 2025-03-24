@@ -31,3 +31,10 @@ Fejlesztések:
 # Fixálások: 
   - 1.) Infobox szerveroldalról meghívható, hozzáadta: Zeratul
 ############################ 2025.03.22
+
+############################ v0.0.0
+Fejlesztések:
+  - 1.) Mysql adatbázis csatlakozás létrehozva
+  - 2.) nwmta.sql fájl létrehozva
+
+############################ 2025.03.24
