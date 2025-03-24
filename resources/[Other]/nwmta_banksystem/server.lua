@@ -26,5 +26,7 @@ dbQuery(
 -- ATM létrehozás --
 function createAtmFunction(player, cmd)
     --if (getElementData(player, "login")) then
+	local admin = exports["nwmta_admins"]:isPlayerAdmin(player)
+	local devSerial = exports["nwmta_dev"]:isPlayerDev(player)
     --end
 end
