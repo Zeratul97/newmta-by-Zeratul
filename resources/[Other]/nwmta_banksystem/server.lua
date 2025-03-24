@@ -108,6 +108,18 @@ function deleteAtmFunction(player, cmd, id)
 	    end
 	end
 	if (devSerial) then
+	    if (tonumber(id)) then
+		local id = tonumber(id)
+		if (atms[id]) then
+		    dbExec(con, "DELETE FROM atms WHERE id=?", id)
+		    destroyElement(atms[id])
+		    local adminNick = getElementData(player, "admin >> nick") or "Ismeretlen"
+		    outputChatBox("#8dec62["..modName.."]: Sikeresen töröltél egy ATM-et!", player, 255, 255, 255, true)
+		    triggerClientEvent(root, "serverAdminDiaryMessage", root, "#ef564b"..adminNick.." #6bbffftörölt egy ATM-et, ATM ID-je: #ef564b"..id.." #6bbfff!")
+		end
+	    else
+		outputChatBox("#ef564b["..modName.."]: Nincs ilyen ATM, ezzel az ID-vel!", player, 255, 255, 255, true)
+	    end
 	end
     --end
 end
