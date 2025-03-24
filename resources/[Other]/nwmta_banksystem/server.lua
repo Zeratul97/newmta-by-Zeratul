@@ -22,3 +22,9 @@ dbQuery(
 	end
     end, con, "SELECT * FROM atms"
 )
+
+-- ATM létrehozás --
+function createAtmFunction(player, cmd)
+    --if (getElementData(player, "login")) then
+    --end
+end
