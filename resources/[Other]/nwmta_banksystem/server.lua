@@ -16,9 +16,9 @@ end
 -- Adatbázis lekérdezése --
 dbQuery(
     function(data)
-		local results, lines = dbPoll(data, 500)
-		for key, i in ipairs(results) do
-			atmLoads(i)
-		end
+	local results, lines = dbPoll(data, 500)
+	for key, i in ipairs(results) do
+	    atmLoads(i)
+	end
     end, con, "SELECT * FROM atms"
 )
