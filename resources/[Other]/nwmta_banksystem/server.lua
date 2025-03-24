@@ -30,6 +30,10 @@ function createAtmFunction(player, cmd)
 	local devSerial = exports["nwmta_dev"]:isPlayerDev(player)
 	if (admin) then
             if (getElementData(player, "admin >> duty")) then
+		if (getElementData(player, "admin >> level") >= 4) then
+		else
+		    outputChatBox("#ef564b Nem vagy elég magas rangú admin!", player, 255, 255, 255, true)
+		end
             else
 		outputChatBox("#ef564b Nem vagy admin szolgálatban!", player, 255, 255, 255, true)
             end
