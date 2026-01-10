@@ -29,3 +29,15 @@ function isAdminTitle(player)
 	end
 end
 
+-- Admin rang színe --
+function isAdminTitleColor(player)
+	if (player) then
+		if (adminTitleColor[getElementData(player, "admin:level")]) then
+			return adminTitleColor[getElementData(player, "admin:level")]
+		else
+			return "#ffffff"
+		end
+	else
+		return false
+	end
+end
