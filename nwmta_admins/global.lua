@@ -15,3 +15,17 @@ function isPlayerAdmin(player)
 		return false
 	end
 end
+
+-- Játékos adminrangjának vissza küldése --
+function isAdminTitle(player)
+	if (player) then
+		if (adminTitle[getElementData(player, "admin:level")]) then
+			return adminTitle[getElementData(player, "admin:level")]
+		else
+			return false
+		end
+	else
+		return false
+	end
+end
+
