@@ -5,13 +5,13 @@ devSerials = {
 
 -- Fejlesztő-e a játékos avagy sem --
 function getDevSerial(player)
-	  if (player) then
-		    if (devSerials[getPlayerSerial(player)]) then
-			      return true
-		    else
-			      return false
-		    end
-	  else
-		    return false
-	  end
+	if (player) then
+		 if (devSerials[getPlayerSerial(player)]) then
+			return true
+		else
+			return false
+		end
+	else
+		return false
+	 end
 end
