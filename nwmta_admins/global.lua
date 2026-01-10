@@ -41,3 +41,42 @@ function isAdminTitleColor(player)
 		return false
 	end
 end
+
+-- Admin segéd rangjának vissza küldése --
+function isAdminHelperTitle(player)
+	if (player) then
+		if (adminHelperTitle[getElementData(player, "adminhelper:level")]) then
+			return adminHelperTitle[getElementData(player, "adminhelper:level")]
+		else
+			return false
+		end
+	else
+		return false
+	end
+end
+
+-- Admin segéd rang színe --
+function isAdminHelperColor(player)
+	if (player) then
+		if (adminHelperColor[getElementData(player, "adminhelper:level")]) then
+			return adminHelperColor[getElementData(player, "adminhelper:level")]
+		else
+			return false
+		end
+	else
+		return false
+	end
+end
+
+-- Admin segéd a játékos, avagy sem --
+function isAdminHelper(player)
+	if (player) then
+		if (getElementData(player, "adminhelper")) then
+			return true
+		else
+			return false
+		end
+	else
+		return false
+	end
+end
