@@ -5,5 +5,7 @@
     <script src="server.lua" type="server" />
     <script src="global.lua" type="shared" cache="false" />
 
+    <export function="getModData" type="shared" />
+
     <min_mta_version client="1.5.6" server="1.5.6" />
 </meta>
