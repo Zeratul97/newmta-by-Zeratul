@@ -1,5 +1,5 @@
 <meta>
-	<info author="Zeratul" type="script" name="store_banlist" />
+	<info author="Zeratul" type="script" name="nwmta_banlist" />
 	
 	<script src="global.lua" type="shared" cache="false" />
 	
