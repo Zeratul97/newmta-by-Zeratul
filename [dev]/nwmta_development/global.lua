@@ -1,6 +1,6 @@
 -- Fejlesztői serial-ok listája --
 devSerials = {
-	["fejlesztő serial-ja"] = true, --Lenovo IdeaPad Gaming 3(Zeratul)
+	["fejlesztő serial-ja"] = true, --Fejlesztők serialja kerül ide
 }
 
 -- Fejlesztő-e a játékos avagy sem --
