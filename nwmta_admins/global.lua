@@ -12,6 +12,6 @@ function isPlayerAdmin(player)
 			return false
 		end
 	 else
-		    return false
+		return false
 	end
 end
