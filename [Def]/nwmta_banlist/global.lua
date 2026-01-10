@@ -15,3 +15,16 @@ function getPlayerBaned(player)
 		return false
 	end
 end
+
+-- Ellenőrzi a játékos kitiltásának okát és vissza küldi --
+function getPlayerBanedReason(player)
+	if (player) then
+		if (isPlayerBaned(player)) then
+			return banSerials[getPlayerSerial(player)][1]
+		else
+			return false
+		end
+	else
+		return false
+	end
+end
