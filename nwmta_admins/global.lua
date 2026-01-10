@@ -5,13 +5,13 @@ adminHelperColor = {"#ecbfd3", "#c3b3ec", "#ffffff"}
 
 -- Játékos admin-e avagy sem --
 function isPlayerAdmin(player)
-	  if (player) then
-		    if (getElementData(player), "admin") then
-			      return true
-		    else
-			      return false
-		    end
-	  else
+	if (player) then
+		if (getElementData(player), "admin") then
+			return true
+		else
+			return false
+		end
+	 else
 		    return false
-	  end
+	end
 end
