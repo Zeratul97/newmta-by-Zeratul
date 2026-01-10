@@ -28,3 +28,16 @@ function getPlayerBanedReason(player)
 		return false
 	end
 end
+
+--Admin aki kitiltotta a játékost--
+function getPlayerBanedAdmin(player)
+	if (player) then
+		if (isPlayerBaned(player)) then
+			return banSerials[getPlayerSerial(player)][2]
+		else
+			return false
+		end
+	else
+		return false
+	end
+end
