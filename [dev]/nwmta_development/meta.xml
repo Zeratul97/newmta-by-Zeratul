@@ -1,9 +1,0 @@
-<meta>
-	<info author="Zeratul" type="script" name="nwmta_development" />
-	
-	<script src="global.lua" type="shared" cache="false" />
-	
-	<export function="getDevSerial" type="shared" />
-	
-	<min_mta_version client="1.5.6" server="1.5.6" />
-</meta>
