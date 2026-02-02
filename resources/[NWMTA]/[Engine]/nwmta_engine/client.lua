@@ -6,3 +6,9 @@ addEventHandler("onClientPlayerDamage", getRootElement(),
 		end
 	end
 )
+
+-- M gomb megnyomására megjelenik a kurzor --
+function showingCursor()
+	showCursor(not isCursorShowing())
+end
+bindKey("m", "down", showingCursor)
